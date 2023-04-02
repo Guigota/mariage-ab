@@ -1,6 +1,63 @@
-<%= simple_form_for(@guest) do |f| %>
-  <%= f.input :prenom %>
-  <%= f.input :nom %>
-  <%= f.input :mail %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for(@guest) do |f| %>
+    <%= f.input :prenom,
+                label: "Prénom",
+                placeholder: "Marie-Louise",
+                hint: "Merci d'indiquer le prénom de la personne répondant pour elle ou les personnes dont elle est responsable"
+    %>
+    <%= f.input :nom,
+                label: "Nom",
+                placeholder: "Desjardins"
+    %>
+    <%= f.input :email,
+                label: "Email",
+                placeholder: "marie-louise.desjardins@gmail.com",
+                hint: "La confirmation de participation sera envoyée sur cet email. Merci d'indiquer un email que vous consultez régulièrement"
+    %>
+    <%= f.input :participation,
+                label: "Nous serons là ?",
+                as: :radio_buttons,
+                collection: [['Oui !', 'Yes'], ["Malheureusement, non ... Snif !", "No"]]
+
+
+    %>
+    <%= f.input :plus_un,
+                label: "Je serai accompagné-e ?",
+                as: :radio_buttons,
+                collection: [['Oui, nous serons plusieurs', 'Yes'], ["Non, je viens solo", "No"]]
+
+    %>
+    <%= f.input :nb_adultes,
+                label: "Merci d'indiquer combien de personnes de plus de 12 ans seront présentes",
+                as: :radio_buttons,
+                collection: (1..7)
+    %>
+    <%= f.input :nb_enfants,
+                label: "Merci d'indiquer le nombre d'enfants ayant entre 3 et 12 ans qui seront présents le jour du mariage",
+                as: :radio_buttons,
+                collection: (1..7)
+
+    %>
+    <%= f.input :brunch,
+                # label: plus_un == true ? 'Nous serons présents au brunch le dimanche matin' : 'Je serai présent-e au brunch le dimanche',
+                as: :radio_buttons,
+                collection: [['Oui !', 'Yes'], ["Non", "No"]]
+    %>
+    <%= f.input :hebergement,
+                label: "Pour l'hébergement ...",
+                collection: ["Nous dormirons sur place", "Nous trouverons un hébergement par mes propres moyens"],
+                # collection: GUEST::HEBERGEMENT_MULTI,
+                as: :radio_buttons
+
+    %>
+    <%= f.input :contraintes_alimentaires,
+                label: "Avez vous des allergies ou régimes alimentaires spécifiques ?",
+                as: :text
+    %>
+    <%= f.input :musique,
+                label: "Quelles sont les musiques que vous aimeriez entendre lors de la fête ?",
+                as: :text
+    %>
+    <%= f.submit %>
+  <% end %>
+</div>
