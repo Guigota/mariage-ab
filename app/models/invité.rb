@@ -1,2 +1,0 @@
-class Invité < ApplicationRecord
-end

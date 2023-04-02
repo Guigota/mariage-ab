@@ -1,2 +1,0 @@
-class Thé < ApplicationRecord
-end
