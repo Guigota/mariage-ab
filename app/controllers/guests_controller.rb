@@ -1,4 +1,6 @@
 class GuestsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[home new create edit update ]
+
   def new
     @guest = Guest.new
   end
