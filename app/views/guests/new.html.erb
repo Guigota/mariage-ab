@@ -1,18 +1,29 @@
 <div class="container">
   <%= simple_form_for(@guest) do |f| %>
+  <div class="d-flex wrapping-inline">
+                  <%= f.input :nom,
+                              label: "Nom",
+                              placeholder: "Desjardins",
+                              wrapper_html: {
+                                class: "form-inline-field-small"
+                              }
+                  %>
     <%= f.input :prenom,
                 label: "Prénom",
                 placeholder: "Marie-Louise",
-                hint: "Merci d'indiquer le prénom de la personne répondant pour elle ou les personnes dont elle est responsable"
+                hint: "Merci d'indiquer le prénom de la personne répondant pour elle ou les personnes dont elle est responsable",
+                wrapper_html: {
+                  class: "form-inline-field-large"
+                }
     %>
-    <%= f.input :nom,
-                label: "Nom",
-                placeholder: "Desjardins"
-    %>
+    </div>
     <%= f.input :email,
                 label: "Email",
                 placeholder: "marie-louise.desjardins@gmail.com",
-                hint: "La confirmation de participation sera envoyée sur cet email. Merci d'indiquer un email que vous consultez régulièrement"
+                hint: "La confirmation de participation sera envoyée sur cet email. Merci d'indiquer un email que vous consultez régulièrement",
+                wrapper_html: {
+                  class: "form-inline-field-large"
+                }
     %>
     <%= f.input :participation,
                 label: "Nous serons là ?",
@@ -47,7 +58,11 @@
                 label: "Pour l'hébergement ...",
                 collection: ["Nous dormirons sur place", "Nous trouverons un hébergement par mes propres moyens"],
                 # collection: GUEST::HEBERGEMENT_MULTI,
-                as: :radio_buttons
+                as: :radio_buttons,
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'category-wrapper',
+                item_wrapper_class: 'category-item',
+                input_html: {class: 'category-selector'}
 
     %>
     <%= f.input :contraintes_alimentaires,
@@ -58,6 +73,6 @@
                 label: "Quelles sont les musiques que vous aimeriez entendre lors de la fête ?",
                 as: :text
     %>
-    <%= f.submit %>
+    <%= f.submit "Envoyer la réponse aux mariés", class: "btn btn-success" %>
   <% end %>
 </div>
