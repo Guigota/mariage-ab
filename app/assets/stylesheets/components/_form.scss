@@ -1,17 +1,34 @@
-.wrapping-inline{
-  justify-content: space-between;
-  align-items: start;
+// .wrapping-inline{
+//   justify-content: space-between;
+//   align-items: start;
+// }
+
+.container-form{
+  margin-inline: 30%;
 }
 
 .form-inline-field-small{
-  width: 30%;
+  width: 100%;
 }
-.form-inline-field-large{
-  width: 68%;
+// .form-inline-field-large{
+//   width: 68%;
+// }
+
+@media (max-width: 768px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container-form{
+    margin-inline: 15%;
+  }
 }
 
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container-form{
+    margin-inline: 5%;
+  }
+}
 
-// Nice form
+// Nice form for long text
 .category-wrapper {
   display: flex;
   justify-content: space-around;
@@ -33,8 +50,8 @@
   box-sizing: border-box;
   width: 100%;
   font-size: 12px;
-  text-align: left;
-  padding: 10px 10px 30px 10px;
+  text-align: center;
+  padding: 10px;
   border: 1px solid #EAEAEA;
   border-radius: 4px;
   background-color: white;
@@ -42,6 +59,88 @@
 
 
 .category-selector:checked + label {
+  color: white !important;
+  background-color: blue;
+  text-align: center;
+}
+
+
+// Nice form for people
+.category-wrapper-people {
+  display: flex;
+  justify-content: space-around;
+  // flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.category-item-people {
+  flex: 0 0 12%;
+}
+
+.category-selector-people {
+  position: absolute;
+  transform: scale(0);
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.category-selector-people + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 4px;
+  background-color: white;
+}
+
+
+.category-selector-people:checked + label {
+  color: white !important;
+  background-color: blue;
+  text-align: center;
+}
+
+// Nice form for plus_un
+// Nice form for people
+.category-wrapper-accomp {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.category-item-accomp {
+  flex: 0 0 45%;
+}
+
+.category-selector-accomp {
+  position: absolute;
+  transform: scale(0);
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+}
+
+.category-selector-accomp + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 4px;
+  background-color: white;
+}
+
+
+.category-selector-accomp:checked + label {
   color: white !important;
   background-color: blue;
   text-align: center;
