@@ -14,7 +14,7 @@
 // Nice form
 .category-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -40,6 +40,9 @@
   background-color: white;
 }
 
+
 .category-selector:checked + label {
   color: white !important;
+  background-color: blue;
+  text-align: center;
 }
