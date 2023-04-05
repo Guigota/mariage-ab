@@ -35,11 +35,15 @@
                 collection_wrapper_tag: 'div',
                 collection_wrapper_class: 'category-wrapper-accomp',
                 item_wrapper_class: 'category-item-accomp',
-                input_html: {class: 'category-selector-accomp'}
+                input_html: {
+                  class: 'category-selector-accomp',
+                  data: {action: "click->form#reveal",
+                        form_target: "presence"}
+                }
 
 
     %>
-    <div class="details-participation d-none">
+    <div class="details-participation d-none" data-form-target="infos">
       <%= f.input :plus_un,
                   label: "Je serai accompagné-e ?",
                   as: :radio_buttons,
