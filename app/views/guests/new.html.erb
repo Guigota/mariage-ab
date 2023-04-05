@@ -65,6 +65,7 @@
                 item_wrapper_class: 'category-item-people',
                 input_html: {class: 'category-selector-people'}
     %>
+    <%# <div class="d-flex justify-content-center"> %>
     <%= f.input :brunch,
                 # label: plus_un == true ? 'Nous serons présents au brunch le dimanche matin' : 'Je serai présent-e au brunch le dimanche',
                 as: :radio_buttons,
@@ -74,9 +75,10 @@
                 item_wrapper_class: 'category-item-accomp',
                 input_html: {class: 'category-selector-accomp'}
     %>
+    <%# </div> %>
     <%= f.input :hebergement,
                 label: "Pour l'hébergement ...",
-                collection: ["Nous dormirons sur place", "On s'en occupe de notre côté !"],
+                collection: ["Nous dormirons sur place 🛌🏼", "On s'en occupe de notre côté 👌🏼!"],
                 # collection: GUEST::HEBERGEMENT_MULTI,
                 as: :radio_buttons,
                 collection_wrapper_tag: 'div',
