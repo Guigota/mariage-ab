@@ -1,63 +1,100 @@
-<div class="container">
+<div class="container-form">
   <%= simple_form_for(@guest) do |f| %>
+  <%# <div class="d-flex wrapping-inline"> %>
+                  <%= f.input :nom,
+                              label: "Nom",
+                              placeholder: "Desjardins",
+                              wrapper_html: {
+                                class: "form-inline-field-small"
+                              }
+                  %>
     <%= f.input :prenom,
                 label: "Prénom",
                 placeholder: "Marie-Louise",
-                hint: "Merci d'indiquer le prénom de la personne répondant pour elle ou les personnes dont elle est responsable"
+                hint: "Merci d'indiquer le prénom de la personne répondant pour elle ou les personnes dont elle est responsable",
+                wrapper_html: {
+                  class: "form-inline-field-small"
+                }
     %>
-    <%= f.input :nom,
-                label: "Nom",
-                placeholder: "Desjardins"
-    %>
+    <%# </div> %>
     <%= f.input :email,
                 label: "Email",
                 placeholder: "marie-louise.desjardins@gmail.com",
-                hint: "La confirmation de participation sera envoyée sur cet email. Merci d'indiquer un email que vous consultez régulièrement"
+                hint: "La confirmation de participation sera envoyée sur cet email. Merci d'indiquer un email que vous consultez régulièrement",
+                error: "Il existe déjà une confirmation avec cet email",
+                wrapper_html: {
+                  class: "form-inline-field-small"
+                }
     %>
     <%= f.input :participation,
-                label: "Nous serons là ?",
+                label: "Je serai présent-e ?",
                 as: :radio_buttons,
-                collection: [['Oui !', 'Yes'], ["Malheureusement, non ... Snif !", "No"]]
+                collection: [['Oui 🤩', 'Yes'], ["Non 😪", "No"]],
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'category-wrapper-accomp',
+                item_wrapper_class: 'category-item-accomp',
+                input_html: {class: 'category-selector-accomp'}
 
 
     %>
     <%= f.input :plus_un,
                 label: "Je serai accompagné-e ?",
                 as: :radio_buttons,
-                collection: [['Oui, nous serons plusieurs', 'Yes'], ["Non, je viens solo", "No"]]
+                collection: [['Oui 💏👨‍👩‍👧‍👦', 'Yes'], ["Non, je viens solo ☝🏼", "No"]],
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'category-wrapper-accomp',
+                item_wrapper_class: 'category-item-accomp',
+                input_html: {class: 'category-selector-accomp'}
 
     %>
     <%= f.input :nb_adultes,
                 label: "Merci d'indiquer combien de personnes de plus de 12 ans seront présentes",
                 as: :radio_buttons,
-                collection: (1..7)
+                collection: (1..7),
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'category-wrapper-people',
+                item_wrapper_class: 'category-item-people',
+                input_html: {class: 'category-selector-people'}
     %>
     <%= f.input :nb_enfants,
                 label: "Merci d'indiquer le nombre d'enfants ayant entre 3 et 12 ans qui seront présents le jour du mariage",
                 as: :radio_buttons,
-                collection: (1..7)
-
+                collection: (1..7),
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'category-wrapper-people',
+                item_wrapper_class: 'category-item-people',
+                input_html: {class: 'category-selector-people'}
     %>
     <%= f.input :brunch,
                 # label: plus_un == true ? 'Nous serons présents au brunch le dimanche matin' : 'Je serai présent-e au brunch le dimanche',
                 as: :radio_buttons,
-                collection: [['Oui !', 'Yes'], ["Non", "No"]]
+                collection: [['Oui ! 🥐', 'Yes'], ["Non 💤", "No"]],
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'category-wrapper-accomp',
+                item_wrapper_class: 'category-item-accomp',
+                input_html: {class: 'category-selector-accomp'}
     %>
     <%= f.input :hebergement,
                 label: "Pour l'hébergement ...",
-                collection: ["Nous dormirons sur place", "Nous trouverons un hébergement par mes propres moyens"],
+                collection: ["Nous dormirons sur place", "On s'en occupe de notre côté !"],
                 # collection: GUEST::HEBERGEMENT_MULTI,
-                as: :radio_buttons
+                as: :radio_buttons,
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'category-wrapper',
+                item_wrapper_class: 'category-item',
+                input_html: {class: 'category-selector'}
 
     %>
     <%= f.input :contraintes_alimentaires,
                 label: "Avez vous des allergies ou régimes alimentaires spécifiques ?",
+                placeholder: "🌱🧀🍣🍩🍭🌽🥜🌾",
                 as: :text
     %>
     <%= f.input :musique,
                 label: "Quelles sont les musiques que vous aimeriez entendre lors de la fête ?",
+                placeholder: "🎺🎶🎷🎵🎸🥁🕺🏼💃🏼",
                 as: :text
     %>
-    <%= f.submit %>
+    <%= f.submit "Envoyer la réponse aux mariés", class: "btn btn-success" %>
   <% end %>
 </div>
