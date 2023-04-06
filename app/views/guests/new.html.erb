@@ -43,7 +43,7 @@
 
 
     %>
-    <div class="details-participation d-none" data-form-target="infos">
+    <div class="details-participation" data-form-target="infos">
       <%= f.input :plus_un,
                   label: "Je serai accompagné-e ?",
                   as: :radio_buttons,
@@ -51,26 +51,32 @@
                   collection_wrapper_tag: 'div',
                   collection_wrapper_class: 'category-wrapper-accomp',
                   item_wrapper_class: 'category-item-accomp',
-                  input_html: {class: 'category-selector-accomp'}
+                  input_html: {
+                    class: 'category-selector-accomp',
+                    data: {form_target: "plusUn"}}
 
       %>
       <%= f.input :nb_adultes,
                   label: "Merci d'indiquer combien de personnes de plus de 12 ans seront présentes",
                   as: :radio_buttons,
-                  collection: (1..7),
+                  collection: (0..6),
                   collection_wrapper_tag: 'div',
                   collection_wrapper_class: 'category-wrapper-people',
                   item_wrapper_class: 'category-item-people',
-                  input_html: {class: 'category-selector-people'}
+                  input_html: {
+                    class: 'category-selector-people',
+                    data: {form_target: "adults"}}
       %>
       <%= f.input :nb_enfants,
                   label: "Merci d'indiquer le nombre d'enfants ayant entre 3 et 12 ans qui seront présents le jour du mariage",
                   as: :radio_buttons,
-                  collection: (1..7),
+                  collection: (0..6),
                   collection_wrapper_tag: 'div',
                   collection_wrapper_class: 'category-wrapper-people',
                   item_wrapper_class: 'category-item-people',
-                  input_html: {class: 'category-selector-people'}
+                  input_html: {
+                    class: 'category-selector-people',
+                    data: {form_target: "kids"}}
       %>
       <%# <div class="d-flex justify-content-center"> %>
       <%= f.input :brunch,
@@ -80,18 +86,22 @@
                   collection_wrapper_tag: 'div',
                   collection_wrapper_class: 'category-wrapper-accomp',
                   item_wrapper_class: 'category-item-accomp',
-                  input_html: {class: 'category-selector-accomp'}
+                  input_html: {
+                    class: 'category-selector-accomp',
+                    data: {form_target: "brunch"}}
       %>
       <%# </div> %>
       <%= f.input :hebergement,
                   label: "Pour l'hébergement ...",
-                  collection: ["Nous dormirons sur place 🛌🏼", "On s'en occupe de notre côté 👌🏼!"],
+                  collection: ["Nous dormirons sur place 🛌🏼", "Pas besoin de réserver des lits pour nous 👌🏼!"],
                   # collection: GUEST::HEBERGEMENT_MULTI,
                   as: :radio_buttons,
                   collection_wrapper_tag: 'div',
                   collection_wrapper_class: 'category-wrapper',
                   item_wrapper_class: 'category-item',
-                  input_html: {class: 'category-selector'}
+                  input_html: {
+                    class: 'category-selector',
+                    data: {form_target: "accomodation"}}
 
       %>
       <%= f.input :contraintes_alimentaires,
