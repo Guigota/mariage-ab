@@ -32,7 +32,7 @@ export default class extends Controller {
 
     // Si on clique sur oui, on déploie la suite du formulaire et on réinitialise les champs
     if (event.currentTarget.value === "Yes") {
-      this.infosTarget.classList.remove("dnone") // CHANGE
+      this.infosTarget.classList.remove("d-none") // CHANGE
 
       // Réinitialiser les différents inputs qui auraient pu être cochés par défaut si on passe du non au oui
       this.adultsTargets.forEach((target) => {
@@ -51,7 +51,7 @@ export default class extends Controller {
 
       // Si on clique sur non, on replie le formulaire + on sélectionne des valeurs par défaut
     } else if (event.currentTarget.value === "No") {
-      this.infosTarget.classList.add("dnone") // CHANGE
+      this.infosTarget.classList.add("d-none") // CHANGE
 
       // Ajouter des valeurs pour les élements du dessous
       // ADULTES: Je parcours les choix du nombre d'adultes et je dis de cliquer celui qui vaut 0
