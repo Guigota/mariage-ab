@@ -30,13 +30,30 @@ export default class extends Controller {
     //   console.log("No is a match")
     // }
 
-
+    // Si on clique sur oui, on déploie la suite du formulaire et on réinitialise les champs
     if (event.currentTarget.value === "Yes") {
       this.infosTarget.classList.remove("dnone") // CHANGE
-      // et réinitialiser à unchecked les différentes choses qui auraient pu être cochées par défaut si on passe du non au oui (nil? vide? undefined?)
+
+      // Réinitialiser les différents inputs qui auraient pu être cochés par défaut si on passe du non au oui
+      this.adultsTargets.forEach((target) => {
+        target.checked = false
+      })
+      this.kidsTargets.forEach((target) => {
+        target.checked = false
+      })
+      this.brunchTargets.forEach((target) => {
+        target.checked = false
+      })
+      this.accomodationTargets.forEach((target) => {
+        target.checked = false
+      })
+
+
+      // Si on clique sur non, on replie le formulaire + on sélectionne des valeurs par défaut
     } else if (event.currentTarget.value === "No") {
       this.infosTarget.classList.add("dnone") // CHANGE
-      // Et ajouter des valeurs pour les élements du dessous
+
+      // Ajouter des valeurs pour les élements du dessous
       // ADULTES: Je parcours les choix du nombre d'adultes et je dis de cliquer celui qui vaut 0
       this.adultsTargets.forEach((target) => {
         if (target.value == 0)
