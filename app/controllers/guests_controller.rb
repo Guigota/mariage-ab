@@ -7,7 +7,7 @@ class GuestsController < ApplicationController
 
   def create
     @guest = Guest.new(guest_params)
-    raise
+    # raise
     @guest.save
   end
 
