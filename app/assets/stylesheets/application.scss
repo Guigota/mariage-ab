@@ -10,3 +10,30 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 0.0833333em;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: $teal;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5em;
+  letter-spacing: 0.0833333em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.fa-solid {
+  color: #3A8891;
+}
+
+ul {
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+}

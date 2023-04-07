@@ -1,5 +1,5 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Arvo:400');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,400&display=swap");
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
@@ -14,22 +14,3 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
-h1 {
-  font-size: 60px;
-  font-weight: 700;
-  letter-spacing: 0.0833333em;
-  text-transform: uppercase;
-}
-
-h2 {
-  color: theme-color("primary");
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.5em;
-  letter-spacing: 0.0833333em;
-  text-transform: uppercase;
-}
-
-.fa-solid {
-  color: #3A8891;
-}
