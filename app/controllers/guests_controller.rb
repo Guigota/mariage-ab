@@ -6,8 +6,8 @@ class GuestsController < ApplicationController
   end
 
   def create
-    raise
     @guest = Guest.new(guest_params)
+    # raise
     @guest.save
   end
 
