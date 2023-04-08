@@ -9,7 +9,7 @@ class GuestsController < ApplicationController
     @guest = Guest.new(guest_params)
     # raise
     if @guest.save
-      redirect_to root_path, notice: "Merci, c'est envoyé!"
+      redirect_to root_path, notice: "Merci, c'est envoyé ! 💍👰🏼🤵🏼😘"
     else
       render :new, status: :unprocessable_entity
     end
