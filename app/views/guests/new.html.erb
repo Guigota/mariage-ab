@@ -6,6 +6,7 @@
                   <%= f.input :nom,
                               label: "Nom",
                               placeholder: "Desjardins",
+                              error: "Merci de rentrer un nom",
                               wrapper_html: {
                                 class: "form-inline-field-small"
                               }
@@ -14,6 +15,7 @@
                 label: "Prénom",
                 placeholder: "Marie-Louise",
                 hint: "Merci d'indiquer le prénom de la personne répondant pour elle ou les personnes dont elle est responsable",
+                error: "Merci de rentrer un prénom",
                 wrapper_html: {
                   class: "form-inline-field-small"
                 }
@@ -23,13 +25,14 @@
                 label: "Email",
                 placeholder: "marie-louise.desjardins@gmail.com",
                 hint: "La confirmation de participation sera envoyée sur cet email. Merci d'indiquer un email que vous consultez régulièrement",
-                error: "Il existe déjà une confirmation avec cet email",
+                error: "Soit vous n'avez pas rentré d'email, soit il existe déjà un RSVP avec cet email",
                 wrapper_html: {
                   class: "form-inline-field-small"
                 }
     %>
     <%= f.input :participation,
                 label: "Je serai présent-e ?",
+                error: "Merci de d'indiquer si vous serez présent-e ou non!",
                 as: :radio_buttons,
                 collection: [['Oui 🤩', 'Yes'], ["Non 😪", "No"]],
                 collection_wrapper_tag: 'div',
