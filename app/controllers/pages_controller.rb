@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def adresse
   end
+
+  def programme
+  end
 end
