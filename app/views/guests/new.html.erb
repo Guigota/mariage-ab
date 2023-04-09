@@ -1,4 +1,7 @@
 <div class="container-form">
+<textarea data-controller="textarea-autogrow">
+Very long text here.
+</textarea>
   <%= simple_form_for @guest, html: {
             data: {controller: "form" }
           } do |f| %>
@@ -110,7 +113,12 @@
       <%= f.input :contraintes_alimentaires,
                   label: "Avez vous des allergies ou régimes alimentaires spécifiques ?",
                   placeholder: "🌱🧀🍣🍩🍭🌽🥜🌾",
-                  as: :text
+                  as: :text,
+                  input_html: {
+                    data: {
+                      controller: "textarea-autogrow"
+                    }
+                  }
       %>
       <%= f.input :musique,
                   label: "Quelles sont les musiques que vous aimeriez entendre lors de la fête ?",
@@ -120,4 +128,6 @@
     </div>
     <%= f.submit "Envoyer la réponse aux mariés", class: "btn btn-success" %>
   <% end %>
+
+
 </div>
