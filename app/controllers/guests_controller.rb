@@ -8,7 +8,11 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     # raise
-    @guest.save
+    if @guest.save
+      redirect_to root_path, notice: "Merci, c'est envoyé ! 💍👰🏼🤵🏼😘"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
