@@ -11,6 +11,8 @@ import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
 
+
+
 import { Application } from '@hotwired/stimulus'
 import TextareaAutogrow from 'stimulus-textarea-autogrow'
 
