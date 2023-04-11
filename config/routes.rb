@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "pages#homebis"
 
   resources :guests, only: %i[new create edit update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/adresse', to: 'pages#adresse'
   get '/programme', to: 'pages#programme'
+  get '/notre_histoire', to: 'pages#notre_histoire'
+  get '/galerie', to: 'pages#galerie'
 
 end
