@@ -1,15 +1,13 @@
-.navbar {
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  align-items: center;
+.nav-link {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
-.navbar h1 {
-  color: white;
-  font-size: 2.5em;
-  font-weight: bold;
+.nav-link:not(:last-child):after {
+  content: "<i class='fa-solid fa-heart ms-3 me-3'></i>";
+}
+
+.navbar-nav .nav-item .active > .nav-link {
+  font-weight: bold !important;
+  color: $deep-green !important;
 }

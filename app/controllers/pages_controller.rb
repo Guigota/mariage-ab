@@ -9,4 +9,10 @@ class PagesController < ApplicationController
 
   def programme
   end
+
+  def notre_histoire
+  end
+
+  def galerie    
+  end
 end

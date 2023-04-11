@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/adresse', to: 'pages#adresse'
   get '/programme', to: 'pages#programme'
+  get '/notre_histoire', to: 'pages#notre_histoire'
+  get '/galerie', to: 'pages#galerie'
 
 end
