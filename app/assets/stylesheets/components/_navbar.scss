@@ -1,13 +1,4 @@
-.nav-link {
+.navbar-nav {
   display: flex;
-  align-items: center;
-}
-
-.nav-link:not(:last-child):after {
-  content: "<i class='fa-solid fa-heart ms-3 me-3'></i>";
-}
-
-.navbar-nav .nav-item .active > .nav-link {
-  font-weight: bold !important;
-  color: $deep-green !important;
+  justify-content: center;
 }

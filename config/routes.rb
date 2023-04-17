@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#homebis"
+  root to: "pages#home"
 
   resources :guests, only: %i[new create edit update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   get '/programme', to: 'pages#programme'
   get '/notre_histoire', to: 'pages#notre_histoire'
   get '/galerie', to: 'pages#galerie'
-
 end

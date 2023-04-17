@@ -11,9 +11,12 @@
 @import "components/index";
 @import "pages/index";
 
-
+body, html, p {
+  font-family: Cabin Sketch;
+}
 
 h1 {
+  font-family: $body-font;
   font-size: 60px;
   font-weight: 700;
   letter-spacing: 0.0833333em;
@@ -22,6 +25,7 @@ h1 {
 
 h2 {
   color: $teal;
+  font-family: $body-font;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.5em;
