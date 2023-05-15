@@ -52,15 +52,15 @@
   font-size: 12px;
   text-align: center;
   padding: 10px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid $egg-shell;
   border-radius: 4px;
-  background-color: white;
+  background-color: $beige;
 }
 
 
 .category-selector:checked + label {
   color: white !important;
-  background-color: #0E5E6F;
+  background-color: $deep-green !important;
   text-align: center;
 }
 
@@ -93,15 +93,15 @@
   font-size: 12px;
   text-align: center;
   padding: 10px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid $egg-shell;
   border-radius: 4px;
-  background-color: white;
+  background-color: $beige;
 }
 
 
 .category-selector-people:checked + label {
   color: white !important;
-  background-color: #0E5E6F;
+  background-color: $deep-green !important;
   text-align: center;
 }
 
@@ -135,14 +135,14 @@
   font-size: 12px;
   text-align: center;
   padding: 10px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid $beige;
   border-radius: 4px;
-  background-color: white;
+  background-color: $egg-shell;
 }
 
 
 .category-selector-accomp:checked + label {
   color: white !important;
-  background-color: #0E5E6F;
+  background-color: $deep-green;
   text-align: center;
 }

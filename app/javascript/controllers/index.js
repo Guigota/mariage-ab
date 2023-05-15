@@ -10,6 +10,6 @@ application.register("form", FormController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-// Mathieu
-import TextareaAutogrow from './textarea_autogrow_controller'
-application.register("textarea-autogrow",  TextareaAutogrow)
+import TextareaAutogrowController from "./textarea_autogrow_controller"
+application.register("textarea-autogrow", TextareaAutogrowController)
+

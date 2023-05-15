@@ -1,4 +1,28 @@
 .navbar-nav {
   display: flex;
   justify-content: center;
+  margin: auto;
 }
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #6c757d;
+  color: white;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+.navbar {
+  margin-top: -1px;
+  background-color: #6c757d;
+}
+
+
