@@ -4,12 +4,15 @@
 
 import { application } from "./application"
 
+import CountdownController from "./countdown_controller"
+application.register("countdown", CountdownController)
+
 import FormController from "./form_controller"
 application.register("form", FormController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-// Mathieu
-import TextareaAutogrow from './textarea_autogrow_controller'
-application.register("textarea-autogrow",  TextareaAutogrow)
+import TextareaAutogrowController from "./textarea_autogrow_controller"
+application.register("textarea-autogrow", TextareaAutogrowController)
+
