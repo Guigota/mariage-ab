@@ -9,7 +9,7 @@ export default class extends Controller {
     this.secondsUntilEnd = this.countdownTarget.dataset.secondsUntilEnd;
 
     const now = new Date().getTime();
-    this.endTime = new Date(now + this.secondsUntilEndValue * 1000);
+    this.endTime = new Date(now + this.secondsUntilEnd * 1000);
 
     this.countdown = setInterval(this.countdown.bind(this), 1000);
   }
@@ -33,6 +33,13 @@ export default class extends Controller {
     const minutes = Math.floor((secondsRemaining % secondsPerHour) / secondsPerMinute);
     const seconds = Math.floor(secondsRemaining % secondsPerMinute);
 
-    this.countdownTarget.innerHTML = ${days} days, ${hours} hours; ${minutes} minutes, ${seconds} seconds;
+    this.countdownTarget.innerHTML = `${days} days, ${hours} hours; ${minutes} minutes, ${seconds} seconds`;
+
   }
 }
+
+document.addEventListener('turbolinks:load', () => {
+  // Initialize Stimulus controllers when the page loads or transitions
+  const application = Stimulus.Application.start();
+  application.register("countdown", CountdownController);
+});

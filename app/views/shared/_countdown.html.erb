@@ -1,7 +1,9 @@
+raise
 <p><strong>Target:</strong>
 <%= countdown.target %>
 </p>
 
+<% wedding_date = Time.new(2024, 4, 20) %>
 <% seconds_until_target_time = countdown.target.to_i - Time.now.to_i %>
 
 <%= content_tag(:h1, "", data: {
